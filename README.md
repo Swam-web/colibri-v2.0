@@ -19,13 +19,21 @@ communautaire, moteur upstream inchangé (licence d'origine conservée).
 ## Installer (NixOS flake)
 
 ```nix
-inputs.colibri-v2.url = "github:VOTRE-USER/colibri-v2-launcher";
+inputs.colibri-v2.url = "github:Swam-web/colibri-v2.0";
 # modules = [ colibri-v2.nixosModules.default ];
 # sudo nixos-rebuild switch --flake /etc/nixos#host
 ```
+Une fois installé via le module : **« Colibri v2.0 »** dans les applications
+GNOME (icône verte).
 
-## Tester sans installer
+## Lancer
 
+- **Installé (module)** : « Colibri v2.0 » dans les applications.
+- **Sans installer** :
+```bash
+nix run github:Swam-web/colibri-v2.0
+```
+- **Depuis les sources** :
 ```bash
 nix-shell -p python3Packages.pygobject3 python3Packages.pycairo gtk3 \
   gobject-introspection libnotify \

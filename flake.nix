@@ -16,6 +16,13 @@
         colibri-v2 = l.app;
         default = l.app;
       };
+      apps.${system} = {
+        colibri-v2 = {
+          type = "app";
+          program = "${l.app}/bin/colibri-v2-launcher";
+        };
+        default = self.apps.${system}.colibri-v2;
+      };
       nixosModules.colibri-v2 = import ./nix/module.nix;
       nixosModules.default = self.nixosModules.colibri-v2;
     };
